@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class FenwickTree {
+public class FenwickTree {
     private int[] fen;
     private final int n;
 
@@ -56,6 +56,7 @@ class Solver {
                 int idx = scanner.nextInt();
                 int val = scanner.nextInt();
                 int delta = val - arr[idx];
+                arr[idx] = val;
                 fenwickTree.update(idx, delta);
             } else {
                 int left = scanner.nextInt();
