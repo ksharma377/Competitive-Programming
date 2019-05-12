@@ -3,13 +3,13 @@ using namespace std;
 
 class FenwickTree {
 private:
-  vector<int> bit;
+  vector<int> fen;
   int n;
 
 public:
   FenwickTree(int _n) {
     n = _n + 1;
-    bit.resize(n);
+    fen.resize(n);
   }
 
   void build(const vector<int>& arr, int n) {
@@ -20,14 +20,14 @@ public:
 
   void update(int i, int delta) {
     for (; i <= n; i += i & -i) {
-      bit[i] += delta;
+      fen[i] += delta;
     }
   }
 
   int query(int i) {
     int sum = 0;
     for (; i > 0; i -= i & -i) {
-      sum += bit[i];
+      sum += fen[i];
     }
     return sum;
   }
