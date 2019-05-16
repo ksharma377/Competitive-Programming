@@ -24,7 +24,7 @@ public class SegmentTree {
         int right = (left | 1);
         build(left, start, mid, arr);
         build(right, mid + 1, end, arr);
-        merge(curr, left, right, start, end);
+        merge(curr, left, right);
     }
     
     public void update(int curr, int start, int end, int row, int col, int val) {
@@ -40,7 +40,7 @@ public class SegmentTree {
         int right = (left | 1);
         update(left, start, mid, row, col, val);
         update(right, mid + 1, end, row, col, val);
-        merge(curr, left, right, start, end);
+        merge(curr, left, right);
     }
 
     public int query(int curr, int start, int end, int rowStart, int colStart, int rowEnd, int colEnd) {
@@ -58,8 +58,8 @@ public class SegmentTree {
         return leftAns + rightAns;
     }
 
-    private void merge(int curr, int left, int right, int start, int end) {
-        for (int i = start; i <= end; i++) {
+    private void merge(int curr, int left, int right) {
+        for (int i = 1; i < 4 * m; i++) {
             seg[curr][i] = seg[left][i] + seg[right][i];
         }
     }
