@@ -65,8 +65,9 @@ class Solver {
     private boolean intersect(int i, int j) {
         int deltaX = Math.abs(sensors[i].x - sensors[j].x);
         int deltaY = Math.abs(sensors[i].y - sensors[j].y);
-        double distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-        return distance <= 1.0 * (sensors[i].r + sensors[j].r);
+        int distance = deltaX * deltaX + deltaY * deltaY;
+        int sumOfRadii = sensors[i].r + sensors[j].r;
+        return (distance <= sumOfRadii * sumOfRadii);
     }
 
     private boolean isPathBlocked() {
