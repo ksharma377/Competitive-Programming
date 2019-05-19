@@ -1,5 +1,11 @@
 import java.util.Scanner;
 
+public class ZAlgorithm {
+    public static void main(String[] args) {
+        new ZAlgorithmExecutor().run();
+    }
+}
+
 class ZAlgorithmExecutor {
     private void ZAlgorithm(String s) {
         int n = s.length();
@@ -40,11 +46,5 @@ class ZAlgorithmExecutor {
         String s = pattern + "$" + text;
         System.out.println(s);
         ZAlgorithm(s);
-    }
-}
-
-public class ZAlgorithm {
-    public static void main(String[] args) {
-        new ZAlgorithmExecutor().run();
     }
 }

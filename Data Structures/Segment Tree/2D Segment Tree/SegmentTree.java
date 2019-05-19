@@ -10,10 +10,6 @@ public class SegmentTree {
         seg = new int[4 * n][4 * m];
     }
 
-    public static void main(String[] args) {
-        new Solver().run();
-    }
-
     public void build(int curr, int start, int end, int[][] arr) {
         if (start == end) {
             buildColumnSegmentTree(1, 1, m, arr, curr, end);
@@ -106,6 +102,10 @@ public class SegmentTree {
         int leftAns = queryColumnSegmentTree(left, start, mid, qStart, qEnd, treeIndex);
         int rightAns = queryColumnSegmentTree(right, mid + 1, end, qStart, qEnd, treeIndex);
         return leftAns + rightAns;
+    }
+
+    public static void main(String[] args) {
+        new Solver().run();
     }
 }
 

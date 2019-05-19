@@ -39,9 +39,8 @@ public class FenwickTree {
 }
 
 class Solver {
-    private final Scanner scanner = new Scanner(System.in);
-
     public void run() {
+        final Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int[] arr = new int[n + 1];
         for (int i = 1; i <= n; i++) {
