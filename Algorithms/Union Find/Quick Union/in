@@ -1,0 +1,16 @@
+10 15
+union 5 4
+union 4 9
+connected 3 8
+union 7 6
+union 10 5
+union 3 2
+connected 9 10
+connected 6 5
+union 6 1
+union 8 3
+union 7 2
+union 8 4
+connected 3 10
+connected 1 7
+connected 6 5
